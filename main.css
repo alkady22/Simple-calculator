@@ -1,0 +1,138 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+.app {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.calculator {
+	background-color: #22252D;
+	width: 100%;
+	max-width: 375px;
+	min-height: 640px;
+	display: flex;
+	flex-direction: column;
+	border-radius: 1.5rem;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /*  الظل  */
+	border: 5px solid #fff; /*  الإطار باللون الأبيض  */
+}
+
+.display {
+	min-height: 200px;
+	padding: 1.5rem;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	color: rgb(255, 255, 255);
+	text-align: right;
+	flex: 1 1 0%;
+}
+
+.display .content {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	width: 100%;
+	max-width: 100%;
+	overflow: auto;
+}
+
+.display .input {
+	width: 100%;
+	font-size: 1.25rem;
+	margin-bottom: 0.5rem;
+}
+
+.display .output {
+	font-size: 3rem;
+	font-weight: 700;
+	width: 100%;
+	white-space: nowrap;
+}
+
+.display .operator {
+	color: #EB6666;
+}
+
+.display .brackets,
+.display .percent {
+	color: #26FED7;
+}
+
+.keys {
+	background-color: #292D36;
+	padding: 1.5rem;
+	border-radius: 1.5rem 1.5rem 0 0;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+	grid-gap: 1rem;
+	box-shadow: 0px -2px 16px rgba(0, 0, 0, 0.2);
+}
+
+.keys .key {
+	position: relative;
+	cursor: pointer;
+
+	display: block;
+	height: 0;
+	padding-top: 100%;
+	background-color: #262933;
+	border-radius: 1rem;
+	transition: 0.2s;
+	user-select: none;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* تأثير الظل  */
+}
+
+.keys .key span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	font-size: 2rem;
+	font-weight: 700;
+	color: #ffffff;
+}
+
+.keys .key:hover {
+	transform: scale(1.1); /* تكبير الزر عند التحويم */
+	transition: transform 0.2s ease-in-out; /* تأثير تدريجي على التحويم */
+	box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+.keys .key:active {
+	transform: scale(0.9); /* تقليص الزر عند الضغط */
+	transition: transform 0.1s ease-in-out; /* تأثير تدريجي عند الضغط */
+}
+
+.keys .key.operator span {
+	color: #EB6666;
+}
+
+.keys .key.action span {
+	color: #26FED7;
+}
+
+body.dark-mode .calculator {
+	background-color: #121212; /* خلفية الحاسبة في الوضع الليلي */
+	color: #fff; /* لون النص في الوضع الليلي */
+}
+
+body.dark-mode .keys .key {
+	background-color: #202020; /* لون الخلفية لمربعات الأرقام في الوضع الليلي */
+}
+
+body {
+    background-color: #edd5d4; /* لون الخلفية الخارجية */
+}
+
+
